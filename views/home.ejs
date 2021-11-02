@@ -3,8 +3,10 @@
 <%- include("partials/header") %>
 
     <% posts.forEach(function(post) { %>
+
+        <% let body = post.body.substring(0, 101) + '...'; %>
         <h1><%= post.title %></h1>
-        <p><%= post.body %></p>
+        <p><%= body %><a href="/posts/<%=post.title%>">Read More</a></p>
     <% }); %>
         
 
